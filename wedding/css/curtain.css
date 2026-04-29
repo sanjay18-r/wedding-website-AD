@@ -1,0 +1,295 @@
+/* ════════════════════════════════════════
+   CURTAIN REVEAL SYSTEM
+════════════════════════════════════════ */
+
+#stage {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0d0608;
+  overflow: hidden;
+}
+
+/* ── VELVET CURTAINS ── */
+.curtain {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 5;
+  will-change: transform;
+  overflow: hidden;
+}
+
+/* Velvet fold texture via multi-stop gradient */
+.curtain.left {
+  left: 0;
+  transform-origin: left center;
+  background: linear-gradient(
+    to right,
+    #5a1a26 0%, #8e2d3d 3%, #b84060 5.5%, #d4768a 8%,
+    #c05570 10%, #8e2d3d 13%, #5a1a26 16%,
+    #8e2d3d 19%, #b84060 21.5%, #d4768a 24%,
+    #c05570 26%, #8e2d3d 29%, #5a1a26 32%,
+    #8e2d3d 35%, #b84060 37.5%, #d4768a 40%,
+    #c05570 42%, #8e2d3d 45%, #5a1a26 48%,
+    #8e2d3d 51%, #b84060 53.5%, #d4768a 56%,
+    #c05570 59%, #8e2d3d 62%, #5a1a26 65%,
+    #8e2d3d 68%, #b84060 70.5%, #d4768a 73%,
+    #c05570 76%, #8e2d3d 80%, #5a1a26 83%,
+    #8e2d3d 86%, #b84060 89%, #d4768a 92%,
+    #c05570 96%, #5a1a26 100%
+  );
+  box-shadow: inset -20px 0 60px rgba(0,0,0,0.5), 8px 0 40px rgba(0,0,0,0.6);
+}
+
+.curtain.right {
+  right: 0;
+  transform-origin: right center;
+  background: linear-gradient(
+    to left,
+    #5a1a26 0%, #8e2d3d 3%, #b84060 5.5%, #d4768a 8%,
+    #c05570 10%, #8e2d3d 13%, #5a1a26 16%,
+    #8e2d3d 19%, #b84060 21.5%, #d4768a 24%,
+    #c05570 26%, #8e2d3d 29%, #5a1a26 32%,
+    #8e2d3d 35%, #b84060 37.5%, #d4768a 40%,
+    #c05570 42%, #8e2d3d 45%, #5a1a26 48%,
+    #8e2d3d 51%, #b84060 53.5%, #d4768a 56%,
+    #c05570 59%, #8e2d3d 62%, #5a1a26 65%,
+    #8e2d3d 68%, #b84060 70.5%, #d4768a 73%,
+    #c05570 76%, #8e2d3d 80%, #5a1a26 83%,
+    #8e2d3d 86%, #b84060 89%, #d4768a 92%,
+    #c05570 96%, #5a1a26 100%
+  );
+  box-shadow: inset 20px 0 60px rgba(0,0,0,0.5), -8px 0 40px rgba(0,0,0,0.6);
+}
+
+/* Gold trim edge */
+.curtain.left::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 8px;
+  height: 100%;
+  background: linear-gradient(to bottom,
+    #f0d89a, #c9a84c, #f0d89a, #c9a84c, #f0d89a
+  );
+  box-shadow: 0 0 20px rgba(201,168,76,0.6), -2px 0 15px rgba(0,0,0,0.5);
+}
+
+.curtain.right::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 8px;
+  height: 100%;
+  background: linear-gradient(to bottom,
+    #f0d89a, #c9a84c, #f0d89a, #c9a84c, #f0d89a
+  );
+  box-shadow: 0 0 20px rgba(201,168,76,0.6), 2px 0 15px rgba(0,0,0,0.5);
+}
+
+/* ── TOP VALANCE ── */
+.valance {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20vh;
+  z-index: 10;
+  background: linear-gradient(to bottom,
+    #5a1a26 0%,
+    #8e2d3d 40%,
+    #c05570 70%,
+    rgba(140,40,60,0) 100%
+  );
+  /* Scallop bottom edge */
+  clip-path: ellipse(60% 100% at 50% 0%);
+}
+
+.valance::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #f0d89a, #c9a84c, #f0d89a, #c9a84c, #f0d89a);
+  box-shadow: 0 0 20px rgba(201,168,76,0.5);
+}
+
+/* ── STAGE LIGHT ── */
+.stage-light {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse 40% 80% at 50% -10%,
+    rgba(255,240,200,0.15) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ── STAGE CENTER CONTENT ── */
+.stage-center {
+  position: relative;
+  z-index: 6;
+  text-align: center;
+  color: white;
+  animation: stageFadeIn 1.5s ease 0.5s forwards;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+}
+
+@keyframes stageFadeIn {
+  to { opacity: 1; }
+}
+
+.stage-pre {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(240,216,154,0.8);
+}
+
+.stage-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 400;
+  color: white;
+  letter-spacing: 6px;
+  text-shadow: 0 0 40px rgba(240,216,154,0.4), 0 2px 20px rgba(0,0,0,0.8);
+  line-height: 1.1;
+}
+
+.amp {
+  font-family: 'Dancing Script', cursive;
+  font-size: 0.6em;
+  color: #f0d89a;
+  padding: 0 10px;
+}
+
+.stage-date {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-style: italic;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 3px;
+}
+
+.stage-divider {
+  color: #c9a84c;
+  font-size: 20px;
+  opacity: 0.6;
+  margin: 6px 0;
+  letter-spacing: 8px;
+}
+
+/* ── OPEN BUTTON ── */
+#openBtn {
+  position: relative;
+  overflow: hidden;
+  padding: 18px 56px;
+  background: linear-gradient(135deg, #c9a84c, #f0d89a, #c9a84c);
+  background-size: 200% auto;
+  color: #2c1520;
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-position 0.5s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 30px rgba(201,168,76,0.4), 0 8px 30px rgba(0,0,0,0.4);
+  animation: btnGlow 3s ease infinite;
+}
+
+#openBtn:hover {
+  background-position: right center;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 50px rgba(201,168,76,0.6), 0 15px 40px rgba(0,0,0,0.5);
+}
+
+@keyframes btnGlow {
+  0%, 100% { box-shadow: 0 0 30px rgba(201,168,76,0.3), 0 8px 30px rgba(0,0,0,0.4); }
+  50%       { box-shadow: 0 0 50px rgba(201,168,76,0.6), 0 8px 30px rgba(0,0,0,0.4); }
+}
+
+.stage-ornament {
+  font-family: serif;
+  font-size: 24px;
+  color: rgba(201,168,76,0.4);
+  letter-spacing: 8px;
+}
+
+/* ── CURTAIN OPEN ANIMATION ── */
+.curtain.left.open  { animation: curtainOpenLeft 1.8s cubic-bezier(0.77,0,0.175,1) forwards; }
+.curtain.right.open { animation: curtainOpenRight 1.8s cubic-bezier(0.77,0,0.175,1) forwards; }
+
+@keyframes curtainOpenLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes curtainOpenRight {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+/* Stage fades out after curtains open */
+#stage.opening .stage-center {
+  animation: stageFadeOut 0.5s ease forwards;
+}
+
+@keyframes stageFadeOut {
+  to { opacity: 0; transform: scale(0.95); }
+}
+
+#stage.closed {
+  pointer-events: none;
+  transition: opacity 0.5s 1.6s;
+  opacity: 0;
+}
+
+/* Flash effect when curtains open */
+#stage.flash::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: white;
+  z-index: 20;
+  animation: flashOut 0.6s ease 1.4s forwards;
+  opacity: 0;
+}
+
+@keyframes flashOut {
+  0%   { opacity: 0; }
+  30%  { opacity: 0.7; }
+  100% { opacity: 0; }
+}
+
+/* Curtain sway before open */
+.curtain.sway {
+  animation: curtainSway 3s ease-in-out infinite;
+}
+
+@keyframes curtainSway {
+  0%, 100% { transform: scaleX(1); }
+  50%       { transform: scaleX(0.98) skewY(0.3deg); }
+}

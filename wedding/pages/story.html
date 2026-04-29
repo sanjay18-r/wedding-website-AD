@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Our Story — Arun Mahendran & Divya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel+Decorative:wght@400;700&family=Dancing+Script:wght@400;600;700&family=Jost:wght@200;300;400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/global.css"/>
+<link rel="stylesheet" href="../css/story.css"/>
+<link rel="stylesheet" href="../css/particles.css"/>
+</head>
+<body>
+
+<audio id="bgMusic" src="../audio/wedding-music.mp3" loop preload="none"></audio>
+<button id="musicBtn" onclick="toggleMusic()" title="Toggle Music" aria-label="Toggle music">🎵</button>
+
+<canvas id="petals"></canvas>
+<canvas id="sparkles"></canvas>
+
+<nav id="navbar">
+  <div class="nav-logo">A <span>✦</span> P</div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="story.html" class="active">Our Story</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="invitation.html">Invitation</a></li>
+    <li><a href="wishes.html">Wishes</a></li>
+  </ul>
+  <div class="nav-toggle" onclick="toggleNav()">☰</div>
+</nav>
+
+<!-- ── PAGE HERO ── -->
+<section class="page-hero story-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content">
+    <p class="section-eyebrow">Chapter One</p>
+    <h1>Our Love Story</h1>
+    <p class="page-hero-sub">Every great love story begins with a single moment.</p>
+  </div>
+  <div class="hero-scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ── LOVE METER ── -->
+<section class="love-meter-section">
+  <div class="section-header">
+    <p class="section-eyebrow">By the Numbers</p>
+    <h2>A Love Measured in Moments</h2>
+  </div>
+  <div class="stats-row">
+    <div class="stat-card reveal-up delay-1">
+      <div class="stat-num" data-target="1096">0</div>
+      <div class="stat-label">Days Together</div>
+    </div>
+    <div class="stat-card reveal-up delay-2">
+      <div class="stat-num" data-target="284">0</div>
+      <div class="stat-label">Dates & Adventures</div>
+    </div>
+    <div class="stat-card reveal-up delay-3">
+      <div class="stat-num" data-target="1">0</div>
+      <div class="stat-suffix">✦ Forever ✦</div>
+      <div class="stat-label">Decision Made</div>
+    </div>
+    <div class="stat-card reveal-up delay-4">
+      <div class="stat-num" data-target="∞" data-infinite="true">∞</div>
+      <div class="stat-label">Reasons We Love</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TIMELINE ── -->
+<section class="timeline-section">
+  <div class="section-header">
+    <p class="section-eyebrow">Our Journey</p>
+    <h2>How We Wrote This Story</h2>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-line"></div>
+
+    <!-- Event 1 -->
+    <div class="tl-item left reveal-left">
+      <div class="tl-content">
+        <div class="tl-emoji">☕</div>
+        <span class="tl-year">2022</span>
+        <h3>The First Meeting</h3>
+        <p>A mutual friend's dinner. Two seats left — side by side. We talked for four hours and forgot everyone else was there.</p>
+        <div class="tl-quote">"I drove home smiling like an idiot." — Arun Mahendran</div>
+      </div>
+      <div class="tl-dot"><span>✦</span></div>
+      <div class="tl-photo">
+        <div class="tl-photo-frame">
+          <img src="../images/placeholders/story1.jpg" alt="First meeting" onerror="this.parentElement.classList.add('img-placeholder-frame')"/>
+          <div class="frame-ornament tl">✦</div>
+          <div class="frame-ornament br">✦</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event 2 -->
+    <div class="tl-item right reveal-right">
+      <div class="tl-photo">
+        <div class="tl-photo-frame">
+          <img src="../images/placeholders/story2.jpg" alt="First date" onerror="this.parentElement.classList.add('img-placeholder-frame')"/>
+          <div class="frame-ornament tl">✦</div>
+          <div class="frame-ornament br">✦</div>
+        </div>
+      </div>
+      <div class="tl-dot"><span>✦</span></div>
+      <div class="tl-content">
+        <div class="tl-emoji">🌅</div>
+        <span class="tl-year">March 2022</span>
+        <h3>Our First Date</h3>
+        <p>A morning walk at Marina Beach that turned into an all-day adventure. Coconut water, street food, and the most perfect sunset.</p>
+        <div class="tl-quote">"I knew then. I absolutely knew." — Divya</div>
+      </div>
+    </div>
+
+    <!-- Event 3 -->
+    <div class="tl-item left reveal-left">
+      <div class="tl-content">
+        <div class="tl-emoji">✈️</div>
+        <span class="tl-year">August 2022</span>
+        <h3>First Trip Together</h3>
+        <p>Coorg in the monsoon. Rain-soaked roads, misty coffee estates, and discovering we argue about maps in the most endearing way.</p>
+        <div class="tl-quote">"We got lost on every trail and loved every minute." — Both</div>
+      </div>
+      <div class="tl-dot"><span>✦</span></div>
+      <div class="tl-photo">
+        <div class="tl-photo-frame">
+          <img src="../images/placeholders/story3.jpg" alt="First trip" onerror="this.parentElement.classList.add('img-placeholder-frame')"/>
+          <div class="frame-ornament tl">✦</div>
+          <div class="frame-ornament br">✦</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event 4 -->
+    <div class="tl-item right reveal-right">
+      <div class="tl-photo">
+        <div class="tl-photo-frame">
+          <img src="../images/placeholders/story4.jpg" alt="The proposal" onerror="this.parentElement.classList.add('img-placeholder-frame')"/>
+          <div class="frame-ornament tl">✦</div>
+          <div class="frame-ornament br">✦</div>
+        </div>
+      </div>
+      <div class="tl-dot"><span>💍</span></div>
+      <div class="tl-content">
+        <div class="tl-emoji">💍</div>
+        <span class="tl-year">December 2024</span>
+        <h3>The Proposal</h3>
+        <p>Under a sky full of stars at the same beach where it all began. On one knee, with shaking hands and the most certain heart — "Will you be mine forever?"</p>
+        <div class="tl-quote">"She said yes before I finished the sentence." — Arun Mahendran</div>
+      </div>
+    </div>
+
+    <!-- Event 5 -->
+    <div class="tl-item left reveal-left">
+      <div class="tl-content">
+        <div class="tl-emoji">🌸</div>
+        <span class="tl-year">May 2026</span>
+        <h3>Forever Begins</h3>
+        <p>And now, surrounded by everyone we love, we take the most beautiful step forward — together, always together.</p>
+        <div class="tl-quote">"This is just the beginning of our greatest chapter." — Divya</div>
+      </div>
+      <div class="tl-dot forever"><span>♥</span></div>
+      <div class="tl-photo">
+        <div class="tl-photo-frame">
+          <img src="../images/placeholders/story5.jpg" alt="Wedding day" onerror="this.parentElement.classList.add('img-placeholder-frame')"/>
+          <div class="frame-ornament tl">✦</div>
+          <div class="frame-ornament br">✦</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── LOVE LETTERS SECTION ── -->
+<section class="letters-section">
+  <div class="section-header">
+    <p class="section-eyebrow">From the Heart</p>
+    <h2>Words We Couldn't Say Enough</h2>
+  </div>
+  <div class="letters-grid">
+    <div class="letter-card reveal-up delay-1">
+      <div class="letter-from">— Arun Mahendran to Divya</div>
+      <blockquote>
+        "You are the calm in every storm, the laughter in every ordinary day. 
+        I love you more than all the words I've ever learned."
+      </blockquote>
+    </div>
+    <div class="letter-card reveal-up delay-3">
+      <div class="letter-from">— Divya to Arun Mahendran</div>
+      <blockquote>
+        "You make me feel like the most loved person in every room. 
+        Choosing you is the easiest and best decision I've ever made."
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="story-cta">
+  <div class="cta-inner reveal-fade">
+    <p class="section-eyebrow">And Now</p>
+    <h2>Will You Witness Our Forever?</h2>
+    <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:40px;">
+      <a href="invitation.html" class="btn-primary">View Invitation</a>
+      <a href="gallery.html"    class="btn-ghost">See Our Photos</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">A ✦ D</div>
+    <p class="footer-tagline">"Love is the greatest adventure."</p>
+    <div class="footer-nav">
+      <a href="../index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="events.html">Events</a>
+      <a href="invitation.html">Invitation</a>
+      <a href="wishes.html">Wishes</a>
+    </div>
+    <p class="footer-date">28th–29th May 2026 · Chennai</p>
+  </div>
+</footer>
+
+<script src="../js/particles.js"></script>
+<script src="../js/main.js"></script>
+<script>
+// Animate stat numbers
+const statNums = document.querySelectorAll('.stat-num[data-target]');
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      if (el.dataset.infinite) return;
+      const target = parseInt(el.dataset.target);
+      let current = 0;
+      const step = Math.ceil(target / 60);
+      const interval = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = current.toLocaleString();
+        if (current >= target) clearInterval(interval);
+      }, 25);
+      statObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+statNums.forEach(el => statObserver.observe(el));
+</script>
+</body>
+</html>

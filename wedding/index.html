@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Arun Mahendran &amp; Divya — A Love Story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel+Decorative:wght@400;700&family=Dancing+Script:wght@400;600;700&family=Jost:wght@200;300;400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/global.css"/>
+<link rel="stylesheet" href="css/curtain.css"/>
+<link rel="stylesheet" href="css/particles.css"/>
+</head>
+<body>
+
+<!-- BACKGROUND MUSIC (place wedding-music.mp3 in audio/ folder) -->
+<audio id="bgMusic" src="audio/wedding-music.mp3" loop preload="none"></audio>
+
+<!-- MUSIC TOGGLE BUTTON -->
+<button id="musicBtn" onclick="toggleMusic()" title="Toggle Music" aria-label="Toggle music">
+  🎵
+</button>
+
+<!-- AMBIENT CANVAS LAYERS -->
+<canvas id="petals"></canvas>
+<canvas id="sparkles"></canvas>
+
+<!-- ══════════════════════════════════
+     CURTAIN STAGE INTRO
+═══════════════════════════════════ -->
+<div id="stage">
+  <!-- Top Valance -->
+  <div class="valance"></div>
+  <!-- Curtains -->
+  <div class="curtain left" id="curtainLeft"></div>
+  <div class="curtain right" id="curtainRight"></div>
+  <!-- Stage Light -->
+  <div class="stage-light"></div>
+  <!-- Intro Center Content -->
+  <div class="stage-center" id="stageCenter">
+    <div class="stage-ornament top">❧</div>
+    <p class="stage-pre">With joy in our hearts, we invite you to celebrate</p>
+    <h1 class="stage-title">Arun Mahendran<span class="amp"> & </span>Divya</h1>
+    <p class="stage-date">28th & 29th May · 2026</p>
+    <div class="stage-divider"><span>✦</span></div>
+    <button id="openBtn" onclick="openCurtains()">
+      <span class="btn-text">Open Invitation</span>
+      <span class="btn-shimmer"></span>
+    </button>
+    <div class="stage-ornament bottom">❧</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     MAIN WEBSITE (hidden until curtain opens)
+═══════════════════════════════════ -->
+<div id="mainSite">
+
+  <!-- ── NAVIGATION ── -->
+  <nav id="navbar">
+    <div class="nav-logo">A <span>✦</span> P</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="pages/story.html">Our Story</a></li>
+      <li><a href="pages/gallery.html">Gallery</a></li>
+      <li><a href="pages/events.html">Events</a></li>
+      <li><a href="pages/invitation.html">Invitation</a></li>
+      <li><a href="pages/wishes.html">Wishes</a></li>
+    </ul>
+    <div class="nav-toggle" onclick="toggleNav()">☰</div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-layer"></div>
+    <div class="hero-particles"></div>
+    <div class="hero-content">
+      <p class="hero-pre reveal-up delay-1">Together Forever</p>
+      <h1 class="hero-names reveal-up delay-2">Arun Mahendran <em>&amp;</em> Divya</h1>
+      <div class="hero-hearts reveal-up delay-3">
+        <span>♡</span><span class="big">♥</span><span>♡</span>
+      </div>
+      <p class="hero-date reveal-up delay-4">Reception: 28th May · Muhurtham: 29th May 2026</p>
+      <p class="hero-venue reveal-up delay-5">Chennai</p>
+      <div class="hero-actions reveal-up delay-6">
+        <a href="pages/invitation.html" class="btn-primary">View Invitation</a>
+        <a href="pages/story.html" class="btn-ghost">Our Love Story</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ── COUNTDOWN ── -->
+  <section class="countdown-section">
+    <div class="section-header">
+      <p class="section-eyebrow">The Big Day Approaches</p>
+      <h2>Counting Every Heartbeat</h2>
+    </div>
+    <div class="countdown-grid">
+      <div class="count-card" data-unit="days">
+        <div class="count-num" id="days">00</div>
+        <div class="count-label">Days</div>
+      </div>
+      <div class="count-sep">✦</div>
+      <div class="count-card" data-unit="hours">
+        <div class="count-num" id="hours">00</div>
+        <div class="count-label">Hours</div>
+      </div>
+      <div class="count-sep">✦</div>
+      <div class="count-card" data-unit="minutes">
+        <div class="count-num" id="minutes">00</div>
+        <div class="count-label">Minutes</div>
+      </div>
+      <div class="count-sep">✦</div>
+      <div class="count-card" data-unit="seconds">
+        <div class="count-num" id="seconds">00</div>
+        <div class="count-label">Seconds</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LOVE QUOTE ── -->
+  <section class="quote-section">
+    <div class="quote-bg-text">LOVE</div>
+    <blockquote class="love-quote reveal-fade">
+      "Two souls, one heartbeat — 
+      <em>a love written in the stars.</em>"
+    </blockquote>
+    <div class="quote-flowers">🌸 🌺 🌸</div>
+  </section>
+
+  <!-- ── QUICK STORY TEASER ── -->
+  <section class="teaser-section">
+    <div class="teaser-grid">
+      <div class="teaser-img-wrap reveal-left">
+        <div class="teaser-img-frame">
+          <img src="images/placeholders/couple1.jpg" alt="Arun and Divya" onerror="this.parentElement.classList.add('img-placeholder')"/>
+          <div class="frame-ornament tl">✦</div>
+          <div class="frame-ornament tr">✦</div>
+          <div class="frame-ornament bl">✦</div>
+          <div class="frame-ornament br">✦</div>
+        </div>
+      </div>
+      <div class="teaser-text reveal-right">
+        <p class="section-eyebrow">Our Journey</p>
+        <h2>How It All Began</h2>
+        <p>What started as a chance meeting turned into the most beautiful chapter of our lives. Every laugh, every adventure, every quiet moment together has led us here — to this day we call forever.</p>
+        <a href="pages/story.html" class="btn-primary">Read Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EVENTS PREVIEW ── -->
+  <section class="events-preview">
+    <div class="section-header">
+      <p class="section-eyebrow">Join the Celebration</p>
+      <h2>Wedding Events</h2>
+    </div>
+    <div class="events-cards">
+      <div class="event-card reveal-up delay-1">
+        <div class="event-icon">🎊</div>
+        <h3>Reception</h3>
+        <p class="event-date">Thu, 28th May · 7:00 PM onwards</p>
+        <p class="event-venue">Kalyani Thirumana Mandapam, Mangadu</p>
+      </div>
+      <div class="event-card reveal-up delay-2 featured">
+        <div class="event-icon">💍</div>
+        <h3>Wedding Ceremony</h3>
+        <p class="event-date">Fri, 29th May · 6:00 – 7:30 AM</p>
+        <p class="event-venue">Kalyani Thirumana Mandapam, Mangadu</p>
+        <span class="event-badge">Main Event</span>
+      </div>
+      <div class="event-card reveal-up delay-3">
+        <div class="event-icon">🎵</div>
+        <h3>DJ Music Night</h3>
+        <p class="event-date">Thu, 28th May · Reception Evening</p>
+        <p class="event-venue">Kalyani Thirumana Mandapam, Mangadu</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:50px;">
+      <a href="pages/events.html" class="btn-primary">Full Event Details</a>
+    </div>
+  </section>
+
+  <!-- ── GALLERY TEASER ── -->
+  <section class="gallery-teaser">
+    <div class="section-header">
+      <p class="section-eyebrow">Captured Moments</p>
+      <h2>A Glimpse of Us</h2>
+    </div>
+    <div class="gallery-strip">
+      <div class="strip-photo reveal-scale delay-1"><img src="images/placeholders/g1.jpg" alt="" onerror="this.parentElement.classList.add('img-placeholder')"/></div>
+      <div class="strip-photo tall reveal-scale delay-2"><img src="images/placeholders/g2.jpg" alt="" onerror="this.parentElement.classList.add('img-placeholder')"/></div>
+      <div class="strip-photo reveal-scale delay-3"><img src="images/placeholders/g3.jpg" alt="" onerror="this.parentElement.classList.add('img-placeholder')"/></div>
+      <div class="strip-photo tall reveal-scale delay-4"><img src="images/placeholders/g4.jpg" alt="" onerror="this.parentElement.classList.add('img-placeholder')"/></div>
+      <div class="strip-photo reveal-scale delay-5"><img src="images/placeholders/g5.jpg" alt="" onerror="this.parentElement.classList.add('img-placeholder')"/></div>
+    </div>
+    <div style="text-align:center;margin-top:50px;">
+      <a href="pages/gallery.html" class="btn-primary">See Full Gallery</a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">A ✦ D</div>
+      <p class="footer-tagline">"Love is the greatest adventure."</p>
+      <div class="footer-nav">
+        <a href="pages/story.html">Our Story</a>
+        <a href="pages/gallery.html">Gallery</a>
+        <a href="pages/events.html">Events</a>
+        <a href="pages/invitation.html">Invitation</a>
+        <a href="pages/wishes.html">Wishes</a>
+      </div>
+      <p class="footer-date">28th–29th May 2026 · Chennai</p>
+      <p class="footer-credit">Made with ♥ for the most beautiful day</p>
+    </div>
+  </footer>
+
+</div><!-- /mainSite -->
+
+<script src="js/particles.js"></script>
+<script src="js/curtain.js"></script>
+<script src="js/main.js"></script>
+<script src="js/countdown.js"></script>
+</body>
+</html>

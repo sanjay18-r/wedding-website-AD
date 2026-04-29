@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Events — Arun Mahendran & Divya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel+Decorative:wght@400;700&family=Dancing+Script:wght@400;600;700&family=Jost:wght@200;300;400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/global.css"/>
+<link rel="stylesheet" href="../css/events.css"/>
+<link rel="stylesheet" href="../css/particles.css"/>
+</head>
+<body>
+
+<audio id="bgMusic" src="../audio/wedding-music.mp3" loop preload="none"></audio>
+<button id="musicBtn" onclick="toggleMusic()" title="Toggle Music" aria-label="Toggle music">🎵</button>
+
+<canvas id="petals"></canvas>
+<canvas id="sparkles"></canvas>
+
+<nav id="navbar">
+  <div class="nav-logo">A <span>✦</span> P</div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="story.html">Our Story</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="events.html" class="active">Events</a></li>
+    <li><a href="invitation.html">Invitation</a></li>
+    <li><a href="wishes.html">Wishes</a></li>
+  </ul>
+  <div class="nav-toggle" onclick="toggleNav()">☰</div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero events-hero">
+  <div class="page-hero-bg events-bg"></div>
+  <div class="page-hero-content">
+    <p class="section-eyebrow">Save the Dates</p>
+    <h1>Wedding Events</h1>
+    <p class="page-hero-sub">Join us for each magical moment.</p>
+  </div>
+</section>
+
+<!-- EVENT CARDS -->
+<section class="events-detail">
+  <div class="section-header">
+    <p class="section-eyebrow">All Celebrations</p>
+    <h2>Two Days of Joy</h2>
+  </div>
+
+  <!-- EVENT 1: Reception -->
+  <div class="event-detail-card reveal-up">
+    <div class="edc-left">
+      <div class="edc-icon-wrap">
+        <div class="edc-icon">🎊</div>
+      </div>
+      <div class="edc-number">01</div>
+    </div>
+    <div class="edc-center">
+      <span class="edc-badge">Day One — Evening</span>
+      <h2>Grand Reception</h2>
+      <p class="edc-desc">An elegant evening of joy, DJ music, and celebration! Come dressed in your best as we welcome everyone together before the sacred ceremony. Eat, dance, and let's make memories that will last a lifetime!</p>
+      <div class="edc-details-grid">
+        <div class="edc-detail">
+          <span class="edc-detail-icon">📅</span>
+          <div><strong>Date</strong><br/>Wednesday, 28th May 2026</div>
+        </div>
+        <div class="edc-detail">
+          <span class="edc-detail-icon">⏰</span>
+          <div><strong>Time</strong><br/>7:00 PM onwards</div>
+        </div>
+        <div class="edc-detail">
+          <span class="edc-detail-icon">📍</span>
+          <div><strong>Venue</strong><br/>Kalyani Thirumana Mandapam, Mangadu, Chennai</div>
+        </div>
+        <div class="edc-detail">
+          <span class="edc-detail-icon">👗</span>
+          <div><strong>Dress Code</strong><br/>Ethnic / Festive Wear</div>
+        </div>
+      </div>
+    </div>
+    <div class="edc-right">
+      <div class="edc-photo-frame">
+        <img src="../images/placeholders/ev4.jpg" alt="Reception" onerror="this.parentElement.classList.add('edc-placeholder')"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENT 2: Wedding Muhurtham — FEATURED -->
+  <div class="event-detail-card featured-event reveal-up">
+    <div class="edc-left">
+      <div class="edc-icon-wrap gold">
+        <div class="edc-icon">💍</div>
+      </div>
+      <div class="edc-number gold-num">02</div>
+    </div>
+    <div class="edc-center">
+      <span class="edc-badge main">The Sacred Moment</span>
+      <h2>Wedding Ceremony (Muhurtham)</h2>
+      <p class="edc-desc">The most auspicious moment of our lives. As dawn breaks on the 29th, R. ArunMahendran and S. Divya will be bound together in holy matrimony. Come witness the sacred fire, the seven vows, and the beginning of forever.</p>
+      <div class="edc-details-grid">
+        <div class="edc-detail">
+          <span class="edc-detail-icon">📅</span>
+          <div><strong>Date</strong><br/>Thursday, 29th May 2026</div>
+        </div>
+        <div class="edc-detail">
+          <span class="edc-detail-icon">⏰</span>
+          <div><strong>Muhurtham Time</strong><br/>6:00 AM – 7:30 AM</div>
+        </div>
+        <div class="edc-detail">
+          <span class="edc-detail-icon">📍</span>
+          <div><strong>Venue</strong><br/>Kalyani Thirumana Mandapam, Mangadu, Chennai</div>
+        </div>
+        <div class="edc-detail">
+          <span class="edc-detail-icon">👗</span>
+          <div><strong>Dress Code</strong><br/>Traditional / Ethnic Wear</div>
+        </div>
+      </div>
+      <div class="edc-morning-note">
+        <span>🌅</span>
+        <p>The Muhurtham begins at sunrise — please arrive by <strong>5:45 AM</strong> to be seated before the ceremony begins.</p>
+      </div>
+    </div>
+    <div class="edc-right">
+      <div class="edc-photo-frame gold-frame">
+        <img src="../images/placeholders/ev3.jpg" alt="Wedding Ceremony" onerror="this.parentElement.classList.add('edc-placeholder')"/>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- MAP / VENUE -->
+<section class="venue-section">
+  <div class="section-header">
+    <p class="section-eyebrow">Find Us</p>
+    <h2>Venue &amp; Directions</h2>
+  </div>
+  <div class="venue-grid">
+    <div class="venue-info reveal-left">
+      <div class="venue-name">Kalyani Thirumana Mandapam</div>
+      <p class="venue-addr">Mangadu, Chennai</p>
+
+      <div class="venue-event-times">
+        <div class="vet-row">
+          <span class="vet-icon">🎊</span>
+          <div>
+            <strong>Reception</strong>
+            <span>28th May 2026 · 7:00 PM onwards</span>
+          </div>
+        </div>
+        <div class="vet-row highlight">
+          <span class="vet-icon">💍</span>
+          <div>
+            <strong>Muhurtham</strong>
+            <span>29th May 2026 · 6:00 AM – 7:30 AM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="venue-links">
+        <a href="https://share.google/I0GQ9XXXimUZNa5ju" target="_blank" class="btn-primary">
+          📍 &nbsp;Get Directions
+        </a>
+      </div>
+      <div class="venue-note">
+        <strong>For Reception (28th May):</strong> Please arrive by 6:45 PM · DJ Music 🎵<br/>
+        <strong>For Muhurtham (29th May):</strong> Please be seated by <strong>5:45 AM</strong>.
+      </div>
+    </div>
+
+    <div class="venue-map reveal-right">
+      <div class="map-embed-wrap">
+        <!-- Google Maps embed -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d0!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zVmVudWU!5e0!3m2!1sen!2sin!4v0"
+          width="100%" height="100%"
+          style="border:0; display:none;"
+          id="gmap"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Wedding Venue">
+        </iframe>
+        <!-- Visible map card with direct link -->
+        <div class="map-card">
+          <div class="map-card-visual">
+            <div class="map-card-pin">
+              <div class="pin-circle">📍</div>
+              <div class="pin-rings">
+                <div class="pin-ring r1"></div>
+                <div class="pin-ring r2"></div>
+                <div class="pin-ring r3"></div>
+              </div>
+            </div>
+            <div class="map-card-grid"></div>
+          </div>
+          <div class="map-card-info">
+            <p class="map-card-label">Kalyani Thirumana Mandapam</p>
+            <p class="map-card-sub">Mangadu, Chennai · Tap to open in Google Maps</p>
+            <a href="https://share.google/I0GQ9XXXimUZNa5ju"
+               target="_blank"
+               class="btn-primary"
+               style="display:inline-flex; margin-top:16px;">
+              🗺️ &nbsp;Open in Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">A ✦ D</div>
+    <p class="footer-tagline">"Love is the greatest adventure."</p>
+    <div class="footer-nav">
+      <a href="../index.html">Home</a>
+      <a href="story.html">Our Story</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="invitation.html">Invitation</a>
+      <a href="wishes.html">Wishes</a>
+    </div>
+    <p class="footer-date">28th–29th May 2026 · Chennai</p>
+  </div>
+</footer>
+
+<script src="../js/particles.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

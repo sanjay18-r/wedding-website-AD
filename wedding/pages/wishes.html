@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Wishes — Arun Mahendran & Divya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel+Decorative:wght@400;700&family=Dancing+Script:wght@400;600;700&family=Jost:wght@200;300;400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/global.css"/>
+<link rel="stylesheet" href="../css/wishes.css"/>
+<link rel="stylesheet" href="../css/particles.css"/>
+</head>
+<body>
+
+<audio id="bgMusic" src="../audio/wedding-music.mp3" loop preload="none"></audio>
+<button id="musicBtn" onclick="toggleMusic()" title="Toggle Music" aria-label="Toggle music">🎵</button>
+
+<canvas id="petals"></canvas>
+<canvas id="sparkles"></canvas>
+
+<nav id="navbar">
+  <div class="nav-logo">A <span>✦</span> P</div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="story.html">Our Story</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="invitation.html">Invitation</a></li>
+    <li><a href="wishes.html" class="active">Wishes</a></li>
+  </ul>
+  <div class="nav-toggle" onclick="toggleNav()">☰</div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero wishes-hero">
+  <div class="page-hero-bg wishes-bg"></div>
+  <div class="page-hero-content">
+    <p class="section-eyebrow">Leave Your Mark</p>
+    <h1>Wishes &amp; Blessings</h1>
+    <p class="page-hero-sub">Your words will be the most treasured gift.</p>
+  </div>
+</section>
+
+<!-- ── WISH FORM ── -->
+<section class="wish-form-section">
+  <div class="section-header">
+    <p class="section-eyebrow">Send Your Love</p>
+    <h2>Write to the Couple</h2>
+  </div>
+
+  <div class="wish-form-wrap reveal-up">
+    <div class="wf-card">
+      <div class="wf-header">
+        <div class="wf-icon">💌</div>
+        <p>Your message will be displayed in the Wishes Wall below and will mean the world to Arun Mahendran & Divya.</p>
+      </div>
+      <div class="wf-body">
+        <div class="wf-field">
+          <label for="wfName">Your Name</label>
+          <input type="text" id="wfName" placeholder="e.g. Aunt Meena" maxlength="50"/>
+        </div>
+        <div class="wf-field">
+          <label for="wfRelation">How You Know Them</label>
+          <select id="wfRelation">
+            <option value="">Select relationship...</option>
+            <option>Family</option>
+            <option>Close Friend</option>
+            <option>Colleague</option>
+            <option>Childhood Friend</option>
+            <option>Neighbor</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="wf-field full">
+          <label for="wfMessage">Your Wish or Blessing</label>
+          <textarea id="wfMessage" placeholder="Write your heartfelt message here... (max 300 characters)" maxlength="300"></textarea>
+          <div class="char-count"><span id="charCount">0</span>/300</div>
+        </div>
+        <div class="wf-field full">
+          <label>Choose a Sticker</label>
+          <div class="sticker-row">
+            <span class="sticker-opt active" data-emoji="💐">💐</span>
+            <span class="sticker-opt" data-emoji="💍">💍</span>
+            <span class="sticker-opt" data-emoji="🌸">🌸</span>
+            <span class="sticker-opt" data-emoji="🥂">🥂</span>
+            <span class="sticker-opt" data-emoji="🎊">🎊</span>
+            <span class="sticker-opt" data-emoji="🌺">🌺</span>
+            <span class="sticker-opt" data-emoji="✨">✨</span>
+            <span class="sticker-opt" data-emoji="❤️">❤️</span>
+          </div>
+        </div>
+        <div class="wf-field full wf-rsvp-field">
+          <label>Will You Attend?</label>
+          <div class="rsvp-opts">
+            <label class="rsvp-opt"><input type="radio" name="rsvp" value="yes" checked/><span>Yes, with joy! 🎉</span></label>
+            <label class="rsvp-opt"><input type="radio" name="rsvp" value="no"/><span>Sadly, cannot make it</span></label>
+          </div>
+        </div>
+        <button class="btn-primary wf-submit" onclick="submitWish()">
+          <span>Send My Wish ✦</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WISHES WALL ── -->
+<section class="wishes-wall-section">
+  <div class="section-header">
+    <p class="section-eyebrow">Love All Around</p>
+    <h2>The Wishes Wall</h2>
+    <p style="margin-top:12px;font-size:15px;">Messages from people who love Arun Mahendran & Divya</p>
+  </div>
+
+  <div class="wishes-grid" id="wishesGrid">
+    <!-- Pre-filled wishes -->
+    <div class="wish-card wc-rose reveal-up delay-1">
+      <div class="wc-emoji">💐</div>
+      <p class="wc-message">"Wishing you both a lifetime of laughter, adventures, and unconditional love. So proud to call you family!"</p>
+      <div class="wc-footer">
+        <span class="wc-name">— Amma & Appa</span>
+        <span class="wc-relation">Family</span>
+      </div>
+    </div>
+    <div class="wish-card wc-gold reveal-up delay-2">
+      <div class="wc-emoji">🌺</div>
+      <p class="wc-message">"Arun Mahendran, you found your forever person! Divya, welcome to the most wonderful family. May your home always be full of love."</p>
+      <div class="wc-footer">
+        <span class="wc-name">— Vikram & Divya</span>
+        <span class="wc-relation">Close Friends</span>
+      </div>
+    </div>
+    <div class="wish-card wc-blush reveal-up delay-3">
+      <div class="wc-emoji">🥂</div>
+      <p class="wc-message">"To the most beautiful couple I know. You two were always meant to be. Here's to a lifetime of happiness!"</p>
+      <div class="wc-footer">
+        <span class="wc-name">— Kavitha</span>
+        <span class="wc-relation">Childhood Friend</span>
+      </div>
+    </div>
+    <div class="wish-card wc-rose reveal-up delay-4">
+      <div class="wc-emoji">✨</div>
+      <p class="wc-message">"May every day of your married life be as magical as today. You deserve every bit of happiness in the world!"</p>
+      <div class="wc-footer">
+        <span class="wc-name">— The Sharma Family</span>
+        <span class="wc-relation">Family</span>
+      </div>
+    </div>
+    <div class="wish-card wc-gold reveal-up delay-5">
+      <div class="wc-emoji">💍</div>
+      <p class="wc-message">"Divya, you picked the best one! Arun Mahendran, you are the luckiest man alive. Congratulations to you both!"</p>
+      <div class="wc-footer">
+        <span class="wc-name">— Colleagues &amp; Friends</span>
+        <span class="wc-relation">Colleagues</span>
+      </div>
+    </div>
+    <div class="wish-card wc-blush reveal-up delay-6">
+      <div class="wc-emoji">🌸</div>
+      <p class="wc-message">"Today two families become one. May your love be modern enough to survive the times, and old-fashioned enough to last forever."</p>
+      <div class="wc-footer">
+        <span class="wc-name">— Uncle Krishnan</span>
+        <span class="wc-relation">Family</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOATING HEARTS OVERLAY -->
+<div id="heartsOverlay" class="hearts-overlay" style="display:none;"></div>
+
+<!-- Success message -->
+<div class="wish-success" id="wishSuccess" style="display:none;">
+  <div class="ws-inner">
+    <div class="ws-icon">💌</div>
+    <h3>Wish Sent!</h3>
+    <p>Arun Mahendran & Divya will cherish your words forever. Thank you!</p>
+    <button class="btn-primary" onclick="closeSuccess()">Back to Wishes</button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">A ✦ D</div>
+    <p class="footer-tagline">"Love is the greatest adventure."</p>
+    <div class="footer-nav">
+      <a href="../index.html">Home</a>
+      <a href="story.html">Our Story</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="events.html">Events</a>
+      <a href="invitation.html">Invitation</a>
+    </div>
+    <p class="footer-date">28th–29th May 2026 · Chennai</p>
+  </div>
+</footer>
+
+<script src="../js/particles.js"></script>
+<script src="../js/main.js"></script>
+<script>
+// Char counter
+const msgArea = document.getElementById('wfMessage');
+const charCount = document.getElementById('charCount');
+if (msgArea) {
+  msgArea.addEventListener('input', () => {
+    charCount.textContent = msgArea.value.length;
+  });
+}
+
+// Sticker selector
+let selectedEmoji = '💐';
+document.querySelectorAll('.sticker-opt').forEach(opt => {
+  opt.addEventListener('click', function() {
+    document.querySelectorAll('.sticker-opt').forEach(s => s.classList.remove('active'));
+    this.classList.add('active');
+    selectedEmoji = this.dataset.emoji;
+  });
+});
+
+function submitWish() {
+  const name    = document.getElementById('wfName').value.trim();
+  const message = document.getElementById('wfMessage').value.trim();
+  const relation = document.getElementById('wfRelation').value;
+
+  if (!name || !message) {
+    alert('Please fill in your name and message. 🌸');
+    return;
+  }
+
+  // Add card to wall
+  const grid = document.getElementById('wishesGrid');
+  const colors = ['wc-rose', 'wc-gold', 'wc-blush'];
+  const color = colors[Math.floor(Math.random() * colors.length)];
+
+  const card = document.createElement('div');
+  card.className = `wish-card ${color} new-wish`;
+  card.innerHTML = `
+    <div class="wc-emoji">${selectedEmoji}</div>
+    <p class="wc-message">"${message}"</p>
+    <div class="wc-footer">
+      <span class="wc-name">— ${name}</span>
+      <span class="wc-relation">${relation || 'Guest'}</span>
+    </div>
+  `;
+  grid.prepend(card);
+  setTimeout(() => card.classList.add('revealed'), 50);
+
+  // Launch hearts
+  launchHearts();
+
+  // Show success
+  document.getElementById('wishSuccess').style.display = 'flex';
+
+  // Reset form
+  document.getElementById('wfName').value = '';
+  document.getElementById('wfMessage').value = '';
+  document.getElementById('wfRelation').value = '';
+  charCount.textContent = '0';
+}
+
+function launchHearts() {
+  const overlay = document.getElementById('heartsOverlay');
+  overlay.style.display = 'block';
+  const emojis = ['❤️','💕','🌸','💍','✨','💐'];
+  for (let i = 0; i < 24; i++) {
+    const h = document.createElement('div');
+    h.className = 'floating-heart';
+    h.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    h.style.left = Math.random() * 100 + 'vw';
+    h.style.animationDelay = Math.random() * 0.8 + 's';
+    h.style.animationDuration = 1.5 + Math.random() * 1.5 + 's';
+    h.style.fontSize = 18 + Math.random() * 24 + 'px';
+    overlay.appendChild(h);
+    setTimeout(() => h.remove(), 3000);
+  }
+  setTimeout(() => overlay.style.display = 'none', 3500);
+}
+
+function closeSuccess() {
+  document.getElementById('wishSuccess').style.display = 'none';
+  document.getElementById('wishesGrid').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

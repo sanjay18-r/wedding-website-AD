@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Invitation — Arun Mahendran & Divya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel+Decorative:wght@400;700&family=Dancing+Script:wght@400;600;700&family=Jost:wght@200;300;400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/global.css"/>
+<link rel="stylesheet" href="../css/invitation.css"/>
+<link rel="stylesheet" href="../css/particles.css"/>
+</head>
+<body>
+
+<audio id="bgMusic" src="../audio/wedding-music.mp3" loop preload="none"></audio>
+<button id="musicBtn" onclick="toggleMusic()" title="Toggle Music" aria-label="Toggle music">🎵</button>
+
+<canvas id="petals"></canvas>
+<canvas id="sparkles"></canvas>
+
+<nav id="navbar">
+  <div class="nav-logo">A <span>✦</span> P</div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="story.html">Our Story</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="invitation.html" class="active">Invitation</a></li>
+    <li><a href="wishes.html">Wishes</a></li>
+  </ul>
+  <div class="nav-toggle" onclick="toggleNav()">☰</div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero invite-hero">
+  <div class="page-hero-bg invite-bg"></div>
+  <div class="page-hero-content">
+    <p class="section-eyebrow">You Are Invited</p>
+    <h1>The Invitation</h1>
+    <p class="page-hero-sub">A celebration of love, family and new beginnings.</p>
+  </div>
+</section>
+
+<!-- ── THE CARD ── -->
+<section class="card-section">
+  <div class="section-header">
+    <p class="section-eyebrow">With Great Joy</p>
+    <h2>Open Your Invitation</h2>
+  </div>
+
+  <!-- Envelope reveal -->
+  <div class="envelope-wrap" id="envelopeWrap">
+    <div class="envelope" id="envelope" onclick="openEnvelope()">
+      <div class="env-flap"></div>
+      <div class="env-body">
+        <div class="env-seal">A❧P</div>
+        <p class="env-hint">Click to open ✦</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- The actual invitation card (hidden until envelope opened) -->
+  <div class="invitation-card" id="inviteCard">
+    <!-- Gold border SVG -->
+    <div class="card-border">
+      <svg viewBox="0 0 700 1000" fill="none" xmlns="http://www.w3.org/2000/svg" class="card-border-svg">
+        <rect x="4" y="4" width="692" height="992" rx="8" stroke="#c9a84c" stroke-width="4"/>
+        <rect x="16" y="16" width="668" height="968" rx="6" stroke="#c9a84c" stroke-width="1.5"/>
+        <rect x="28" y="28" width="644" height="944" rx="4" stroke="#c9a84c" stroke-width="0.8" stroke-dasharray="8,4"/>
+        <!-- Corner ornaments -->
+        <circle cx="30" cy="30" r="6" fill="#c9a84c"/>
+        <circle cx="670" cy="30" r="6" fill="#c9a84c"/>
+        <circle cx="30" cy="970" r="6" fill="#c9a84c"/>
+        <circle cx="670" cy="970" r="6" fill="#c9a84c"/>
+        <!-- Top center ornament -->
+        <path d="M340 4 L350 18 L360 4" stroke="#c9a84c" stroke-width="2" fill="none"/>
+        <path d="M330 4 L340 12" stroke="#c9a84c" stroke-width="1.5" fill="none"/>
+        <path d="M360 4 L370 12" stroke="#c9a84c" stroke-width="1.5" fill="none"/>
+        <!-- Bottom center ornament -->
+        <path d="M340 996 L350 982 L360 996" stroke="#c9a84c" stroke-width="2" fill="none"/>
+        <!-- Side ornaments -->
+        <path d="M4 490 L16 500 L4 510" stroke="#c9a84c" stroke-width="2" fill="none"/>
+        <path d="M696 490 L684 500 L696 510" stroke="#c9a84c" stroke-width="2" fill="none"/>
+      </svg>
+    </div>
+
+    <!-- Card Content -->
+    <div class="card-content">
+      <!-- Header floral -->
+      <div class="card-top-flower">🌸 ✦ 🌸</div>
+      
+      <p class="card-blessing">Sri Periyandavar Thunai · Sri Koliyanur Amman Thunai</p>
+
+      <p class="card-from">We eagerly expect the esteemed presence of<br/>you and your family on this important day</p>
+
+      <div class="card-families">
+        <div class="card-family">
+          <p class="family-label">Son of</p>
+          <p class="family-name">Mr. A. Rajendran<br/><span class="family-detail">Ex. Army Engrs, Kattupakkam, Chennai</span><br/>&amp; Mrs. R. Lakshmi</p>
+        </div>
+        <div class="card-and">♥</div>
+        <div class="card-family">
+          <p class="family-label">Daughter of</p>
+          <p class="family-name">Mr. R. Sankar<br/><span class="family-detail">N.R.S. Timbers, Vanuvampet, Chennai</span><br/>&amp; Mrs. S. Lakshmi</p>
+        </div>
+      </div>
+
+      <p class="card-invite-text">
+        cordially solicit your esteemed presence with family and friends<br/>
+        on the auspicious occasion of the wedding of their children
+      </p>
+
+      <div class="card-couple-names">
+
+        <div class="card-person-block">
+          <span class="card-person-name groom-name">R. ArunMahendran</span>
+          <span class="card-person-qual">B.E., M.S. (Sweden)</span>
+          <span class="card-person-role">Supply Chain Coordinator<br/>Titanx Engine Cooling AB, Sweden</span>
+        </div>
+
+        <div class="card-couple-heart">❦</div>
+
+        <div class="card-person-block">
+          <span class="card-person-name bride-name">S. Divya</span>
+          <span class="card-person-qual">B.Arch.,</span>
+          <span class="card-person-role">Senior Architect &amp; Designer<br/>Design Cafe Interior</span>
+        </div>
+
+      </div>
+
+      <div class="card-divider-ornament">— ✦ —</div>
+
+      <div class="card-details">
+        <div class="card-detail-row">
+          <span class="cd-icon">📅</span>
+          <div>
+            <div class="cd-label">Wedding (Muhurtham)</div>
+            <div class="cd-value">Friday, 29th May 2026 · 6:00 AM – 7:30 AM</div>
+          </div>
+        </div>
+        <div class="card-detail-row">
+          <span class="cd-icon">🎊</span>
+          <div>
+            <div class="cd-label">Reception</div>
+            <div class="cd-value">Thursday, 28th May 2026 · 7:00 PM onwards<br/><small style="color:var(--gold);font-size:12px;">🎵 DJ Music</small></div>
+          </div>
+        </div>
+        <div class="card-detail-row">
+          <span class="cd-icon">📍</span>
+          <div>
+            <div class="cd-label">Venue</div>
+            <div class="cd-value">Kalyani Thirumana Mandapam<br/>Mangadu, Chennai</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-rsvp">
+        <p>Kindly respond by 15th May 2026</p>
+        <a href="wishes.html" class="btn-primary" style="margin-top:16px;">RSVP &amp; Send Wishes</a>
+      </div>
+
+      <div class="card-bottom-flower">🌺 ✦ 🌺</div>
+      
+      <p class="card-footer-note">Your presence is our greatest gift</p>
+    </div>
+  </div>
+
+  <!-- Share / Download actions -->
+  <div class="card-actions" id="cardActions" style="display:none;">
+    <button class="btn-primary" onclick="shareInvite()">Share Invitation ✦</button>
+    <button class="btn-ghost" onclick="window.print()">Save / Print</button>
+  </div>
+</section>
+
+<!-- ── RSVP NOTE ── -->
+<section class="rsvp-section">
+  <div class="rsvp-inner reveal-fade">
+    <p class="section-eyebrow">We Look Forward To</p>
+    <h2>Your Presence & Blessings</h2>
+    <p style="max-width:600px;margin:20px auto 0;text-align:center;font-size:17px;">
+      Your presence means the world to us. Come, eat, dance, and help us celebrate 
+      the most beautiful day of our lives. We cannot wait to see you there!
+    </p>
+    <a href="wishes.html" class="btn-primary" style="margin-top:40px;display:inline-flex;">Send Your Wishes →</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">A ✦ P</div>
+    <p class="footer-tagline">"Love is the greatest adventure."</p>
+    <div class="footer-nav">
+      <a href="../index.html">Home</a>
+      <a href="story.html">Our Story</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="events.html">Events</a>
+      <a href="wishes.html">Wishes</a>
+    </div>
+    <p class="footer-date">28th–29th May 2026 · Chennai</p>
+  </div>
+</footer>
+
+<script src="../js/particles.js"></script>
+<script src="../js/main.js"></script>
+<script>
+function openEnvelope() {
+  const envelope   = document.getElementById('envelope');
+  const inviteCard = document.getElementById('inviteCard');
+  const cardActions = document.getElementById('cardActions');
+  
+  envelope.classList.add('opened');
+  
+  setTimeout(() => {
+    document.getElementById('envelopeWrap').style.display = 'none';
+    inviteCard.style.display = 'block';
+    cardActions.style.display = 'flex';
+    // Animate card in
+    requestAnimationFrame(() => {
+      inviteCard.style.opacity = '0';
+      inviteCard.style.transform = 'translateY(40px) scale(0.95)';
+      requestAnimationFrame(() => {
+        inviteCard.style.transition = 'all 0.8s cubic-bezier(0.34,1.56,0.64,1)';
+        inviteCard.style.opacity = '1';
+        inviteCard.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+  }, 1200);
+}
+
+function shareInvite() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'Arun Mahendran & Divya — Wedding Invitation',
+      text: 'You are invited to our wedding! 29th May 2026.',
+      url: window.location.href
+    });
+  } else {
+    navigator.clipboard.writeText(window.location.href)
+      .then(() => alert('Link copied! Share it with your loved ones. 🌸'));
+  }
+}
+</script>
+</body>
+</html>
