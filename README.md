@@ -1,4 +1,4 @@
-# 💍 Arjun & Priya — Wedding Website
+# 💍 Arun & Divya — Wedding Website
 
 A **cinematic, multi-page wedding invitation website** built with pure HTML, CSS, and JavaScript.  
 No frameworks. No dependencies. Just beautiful, handcrafted code.
