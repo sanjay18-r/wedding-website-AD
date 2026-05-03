@@ -12,8 +12,8 @@
 </head>
 <body>
 
-<audio id="bgMusic" src="../audio/wedding-music.mp3" loop preload="none"></audio>
-<button id="musicBtn" onclick="toggleMusic()" title="Toggle Music" aria-label="Toggle music">🎵</button>
+<audio id="bgMusic" src="../audio/wedding-music.mp3" loop preload="auto"></audio>
+<button id="musicBtn" title="Toggle Music" aria-label="Toggle music">🎵</button>
 
 <canvas id="petals"></canvas>
 <canvas id="sparkles"></canvas>
@@ -48,10 +48,27 @@
 <!-- ── LOVE METER ── -->
 <section class="love-meter-section">
   <div class="section-header">
-    <p class="section-eyebrow">By the Numbers</p>
-    <h2>A Love Measured in Moments</h2>
+    <p class="section-eyebrow">By the Moments</p>
+    <!-- <h2>A Love Measured in Moments</h2> -->
   </div>
-  <div class="stats-row">
+  <div class="love-quote-box reveal-up">
+  <p class="quote-title">A love measured in numbers</p>
+
+  <p class="quote-line">24 hours in a day, but somehow still not enough</p>
+
+  <p class="quote-line">
+    5 minutes of call where voices replace distance and everything feels a little lighter
+  </p>
+
+  <p class="quote-line">
+    3 seconds of silence understanding instead of confusion
+  </p>
+
+  <p class="quote-line highlight">
+    ∞ Reasons we love
+  </p>
+</div>
+  <!-- <div class="stats-row">
     <div class="stat-card reveal-up delay-1">
       <div class="stat-num" data-target="1096">0</div>
       <div class="stat-label">Days Together</div>
@@ -69,7 +86,7 @@
       <div class="stat-num" data-target="∞" data-infinite="true">∞</div>
       <div class="stat-label">Reasons We Love</div>
     </div>
-  </div>
+  </div> -->
 </section>
 
 <!-- ── TIMELINE ── -->
@@ -86,15 +103,15 @@
     <div class="tl-item left reveal-left">
       <div class="tl-content">
         <div class="tl-emoji">☕</div>
-        <span class="tl-year">2022</span>
+        <span class="tl-year">2025</span>
         <h3>The First Meeting</h3>
-        <p>A mutual friend's dinner. Two seats left — side by side. We talked for four hours and forgot everyone else was there.</p>
+        <p>We first met in a themed café—a place where the world felt softer, like it was made for new beginnings.We talked for hours, forgetting everything around us—laughter, comfort, and time quietly slipping away without being noticed.</p>
         <div class="tl-quote">"I drove home smiling like an idiot." — Arun Mahendran</div>
       </div>
       <div class="tl-dot"><span>✦</span></div>
       <div class="tl-photo">
         <div class="tl-photo-frame">
-          <img src="../images/placeholders/story1.jpg" alt="First meeting" onerror="this.parentElement.classList.add('img-placeholder-frame')"/>
+          <img src="../images/first meet.jpeg" alt="First meeting" onerror="this.parentElement.classList.add('img-placeholder-frame')"/>
           <div class="frame-ornament tl">✦</div>
           <div class="frame-ornament br">✦</div>
         </div>
@@ -105,7 +122,7 @@
     <div class="tl-item right reveal-right">
       <div class="tl-photo">
         <div class="tl-photo-frame">
-          <img src="../images/placeholders/story2.jpg" alt="First date" onerror="this.parentElement.classList.add('img-placeholder-frame')"/>
+          <img src="../images/our date.png" alt="First date" onerror="this.parentElement.classList.add('img-placeholder-frame')"/>
           <div class="frame-ornament tl">✦</div>
           <div class="frame-ornament br">✦</div>
         </div>
@@ -113,7 +130,7 @@
       <div class="tl-dot"><span>✦</span></div>
       <div class="tl-content">
         <div class="tl-emoji">🌅</div>
-        <span class="tl-year">March 2022</span>
+        <span class="tl-year">Jan 2026</span>
         <h3>Our First Date</h3>
         <p>A morning walk at Marina Beach that turned into an all-day adventure. Coconut water, street food, and the most perfect sunset.</p>
         <div class="tl-quote">"I knew then. I absolutely knew." — Divya</div>
@@ -123,16 +140,16 @@
     <!-- Event 3 -->
     <div class="tl-item left reveal-left">
       <div class="tl-content">
-        <div class="tl-emoji">✈️</div>
-        <span class="tl-year">August 2022</span>
-        <h3>First Trip Together</h3>
-        <p>Coorg in the monsoon. Rain-soaked roads, misty coffee estates, and discovering we argue about maps in the most endearing way.</p>
+        <div class="tl-emoji">📞</div>
+        <span class="tl-year">Nov 2025</span>
+        <h3>First Call</h3>
+        <p>Our first call started with simple introductions—interests, routines, and dreams. But soon, it turned into something felt more comfortable being themselves and it slowly felt like recognizing someone already familiar.</p>
         <div class="tl-quote">"We got lost on every trail and loved every minute." — Both</div>
       </div>
       <div class="tl-dot"><span>✦</span></div>
       <div class="tl-photo">
         <div class="tl-photo-frame">
-          <img src="../images/placeholders/story3.jpg" alt="First trip" onerror="this.parentElement.classList.add('img-placeholder-frame')"/>
+          <img src="../images/our call.jpeg" alt="First call" onerror="this.parentElement.classList.add('img-placeholder-frame')"/>
           <div class="frame-ornament tl">✦</div>
           <div class="frame-ornament br">✦</div>
         </div>
@@ -143,7 +160,7 @@
     <div class="tl-item right reveal-right">
       <div class="tl-photo">
         <div class="tl-photo-frame">
-          <img src="../images/placeholders/story4.jpg" alt="The proposal" onerror="this.parentElement.classList.add('img-placeholder-frame')"/>
+          <img src="../images/our proposal.jpeg" alt="The proposal" onerror="this.parentElement.classList.add('img-placeholder-frame')"/>
           <div class="frame-ornament tl">✦</div>
           <div class="frame-ornament br">✦</div>
         </div>
@@ -151,10 +168,10 @@
       <div class="tl-dot"><span>💍</span></div>
       <div class="tl-content">
         <div class="tl-emoji">💍</div>
-        <span class="tl-year">December 2024</span>
+        <span class="tl-year">Feb 2026</span>
         <h3>The Proposal</h3>
-        <p>Under a sky full of stars at the same beach where it all began. On one knee, with shaking hands and the most certain heart — "Will you be mine forever?"</p>
-        <div class="tl-quote">"She said yes before I finished the sentence." — Arun Mahendran</div>
+        <p>The world fell quiet as I asked… and in your smile, I found my answer!</p>
+        <div class="tl-quote">"She said yes through her eyes and smile" — Arun Mahendran</div>
       </div>
     </div>
 
@@ -170,7 +187,7 @@
       <div class="tl-dot forever"><span>♥</span></div>
       <div class="tl-photo">
         <div class="tl-photo-frame">
-          <img src="../images/placeholders/story5.jpg" alt="Wedding day" onerror="this.parentElement.classList.add('img-placeholder-frame')"/>
+          <img src="../images/marriage.jpeg" alt="Wedding day" onerror="this.parentElement.classList.add('img-placeholder-frame')"/>
           <div class="frame-ornament tl">✦</div>
           <div class="frame-ornament br">✦</div>
         </div>

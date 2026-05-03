@@ -12,8 +12,8 @@
 </head>
 <body>
 
-<audio id="bgMusic" src="../audio/wedding-music.mp3" loop preload="none"></audio>
-<button id="musicBtn" onclick="toggleMusic()" title="Toggle Music" aria-label="Toggle music">🎵</button>
+<audio id="bgMusic" src="../audio/wedding-music.mp3" loop preload="auto"></audio>
+<button id="musicBtn" title="Toggle Music" aria-label="Toggle music">🎵</button>
 
 <canvas id="petals"></canvas>
 <canvas id="sparkles"></canvas>
@@ -49,36 +49,40 @@
     <p style="margin-top:12px;font-size:15px;">Hover to bring each memory alive</p>
   </div>
   <div class="polaroid-wall">
-    <div class="polaroid-card rotate-neg4 reveal-up delay-1" data-caption="That day at the beach 🌊">
-      <div class="polar-tape"></div>
-      <div class="polar-img"><img src="../images/placeholders/p1.jpg" alt="" onerror="this.classList.add('polar-placeholder')"/></div>
-      <p class="polar-caption">Beach Day ✦</p>
+
+  <div class="polaroid-card rotate-neg4 reveal-up delay-1" data-caption="That day at the beach 🌊">
+    <div class="polar-tape"></div>
+    <div class="polar-img">
+      <img src="../images/polaroid-1.jpeg" alt="">
     </div>
-    <div class="polaroid-card rotate-pos5 reveal-up delay-2" data-caption="Coorg road trip 🌿">
-      <div class="polar-tape"></div>
-      <div class="polar-img"><img src="../images/placeholders/p2.jpg" alt="" onerror="this.classList.add('polar-placeholder')"/></div>
-      <p class="polar-caption">Coorg Getaway ✦</p>
+    <p class="polar-caption">The Beginning of Us ✦</p>
+  </div>
+
+  <div class="polaroid-card rotate-pos5 reveal-up delay-2" data-caption="Coorg road trip 🌿">
+    <div class="polar-tape"></div>
+    <div class="polar-img">
+      <img src="../images/polaroid-2.jpeg" alt="">
     </div>
-    <div class="polaroid-card rotate-neg2 reveal-up delay-3" data-caption="Home is where you are 🏡">
-      <div class="polar-tape"></div>
-      <div class="polar-img"><img src="../images/placeholders/p3.jpg" alt="" onerror="this.classList.add('polar-placeholder')"/></div>
-      <p class="polar-caption">Home Together ✦</p>
+    <p class="polar-caption">Home is Wherever You Are ✦</p>
+  </div>
+
+  <div class="polaroid-card rotate-neg2 reveal-up delay-3" data-caption="Home is where you are 🏡">
+    <div class="polar-tape"></div>
+    <div class="polar-img">
+      <img src="../images/polaroid-3.jpeg" alt="">
     </div>
-    <div class="polaroid-card rotate-pos3 reveal-up delay-4" data-caption="Laughing always 😄">
-      <div class="polar-tape"></div>
-      <div class="polar-img"><img src="../images/placeholders/p4.jpg" alt="" onerror="this.classList.add('polar-placeholder')"/></div>
-      <p class="polar-caption">Our Laughter ✦</p>
+    <p class="polar-caption">Collecting Memories Together ✦</p>
+  </div>
+
+  <div class="polaroid-card rotate-pos3 reveal-up delay-4" data-caption="Laughing always 😄">
+    <div class="polar-tape"></div>
+    <div class="polar-img">
+      <img src="../images/polaroid-4.jpeg" alt="">
     </div>
-    <div class="polaroid-card rotate-neg6 reveal-up delay-5" data-caption="The proposal night 💍">
-      <div class="polar-tape"></div>
-      <div class="polar-img"><img src="../images/placeholders/p5.jpg" alt="" onerror="this.classList.add('polar-placeholder')"/></div>
-      <p class="polar-caption">She Said Yes ✦</p>
-    </div>
-    <div class="polaroid-card rotate-pos2 reveal-up delay-6" data-caption="Just us 💑">
-      <div class="polar-tape"></div>
-      <div class="polar-img"><img src="../images/placeholders/p6.jpg" alt="" onerror="this.classList.add('polar-placeholder')"/></div>
-      <p class="polar-caption">Just Us ✦</p>
-    </div>
+    <p class="polar-caption">A Love That Feels Like Magic ✦</p>
+  </div>
+
+</div>
   </div>
 </section>
 
@@ -91,85 +95,40 @@
   <!-- String wire across top -->
   <div class="gallery-wire"></div>
   <div class="hanging-frames">
-    <div class="hanging-frame reveal-scale delay-1">
-      <div class="frame-rope"></div>
-      <div class="frame-clip">✦</div>
-      <div class="ornate-frame">
-        <div class="frame-border-svg">
-          <!-- SVG ornate border -->
-          <svg viewBox="0 0 300 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="2" width="296" height="376" rx="3" stroke="#c9a84c" stroke-width="3"/>
-            <rect x="12" y="12" width="276" height="356" rx="2" stroke="#c9a84c" stroke-width="1" stroke-dasharray="6,4"/>
-            <circle cx="20" cy="20" r="5" fill="#c9a84c"/>
-            <circle cx="280" cy="20" r="5" fill="#c9a84c"/>
-            <circle cx="20" cy="360" r="5" fill="#c9a84c"/>
-            <circle cx="280" cy="360" r="5" fill="#c9a84c"/>
-            <path d="M140 2 L150 12 L160 2" stroke="#c9a84c" stroke-width="1.5" fill="none"/>
-            <path d="M140 378 L150 368 L160 378" stroke="#c9a84c" stroke-width="1.5" fill="none"/>
-          </svg>
-        </div>
-        <img src="../images/placeholders/f1.jpg" alt="" class="frame-photo" onerror="this.classList.add('frame-placeholder')"/>
+
+  <!-- FRAME 1 -->
+  <div class="hanging-frame reveal-scale delay-1">
+    <div class="frame-rope"></div>
+    <div class="frame-clip">✦</div>
+    <div class="ornate-frame">
+      <div class="frame-border-svg">
+        <svg viewBox="0 0 300 380" fill="none">
+          <rect x="2" y="2" width="296" height="376" rx="3" stroke="#c9a84c" stroke-width="3"/>
+          <rect x="12" y="12" width="276" height="356" rx="2" stroke="#c9a84c" stroke-width="1" stroke-dasharray="6,4"/>
+        </svg>
       </div>
-      <p class="frame-caption">First Look</p>
+      <img src="../images/gold frame 1.jpeg" class="frame-photo"/>
     </div>
-    <div class="hanging-frame reveal-scale delay-2 large">
-      <div class="frame-rope"></div>
-      <div class="frame-clip">✦</div>
-      <div class="ornate-frame">
-        <div class="frame-border-svg">
-          <svg viewBox="0 0 300 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="2" width="296" height="376" rx="3" stroke="#c9a84c" stroke-width="4"/>
-            <rect x="10" y="10" width="280" height="360" rx="2" stroke="#f0d89a" stroke-width="1.5"/>
-            <rect x="18" y="18" width="264" height="344" rx="2" stroke="#c9a84c" stroke-width="1" stroke-dasharray="4,3"/>
-            <circle cx="20" cy="20" r="6" fill="#c9a84c"/>
-            <circle cx="280" cy="20" r="6" fill="#c9a84c"/>
-            <circle cx="20" cy="360" r="6" fill="#c9a84c"/>
-            <circle cx="280" cy="360" r="6" fill="#c9a84c"/>
-            <path d="M145 2 L150 10 L155 2" stroke="#f0d89a" stroke-width="2" fill="none"/>
-            <path d="M145 378 L150 370 L155 378" stroke="#f0d89a" stroke-width="2" fill="none"/>
-          </svg>
-        </div>
-        <img src="../images/placeholders/f2.jpg" alt="" class="frame-photo" onerror="this.classList.add('frame-placeholder')"/>
-      </div>
-      <p class="frame-caption">Heart & Soul</p>
-    </div>
-    <div class="hanging-frame reveal-scale delay-3">
-      <div class="frame-rope"></div>
-      <div class="frame-clip">✦</div>
-      <div class="ornate-frame">
-        <div class="frame-border-svg">
-          <svg viewBox="0 0 300 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="2" width="296" height="376" rx="3" stroke="#c9a84c" stroke-width="3"/>
-            <rect x="12" y="12" width="276" height="356" rx="2" stroke="#c9a84c" stroke-width="1" stroke-dasharray="6,4"/>
-            <circle cx="20" cy="20" r="5" fill="#c9a84c"/>
-            <circle cx="280" cy="20" r="5" fill="#c9a84c"/>
-            <circle cx="20" cy="360" r="5" fill="#c9a84c"/>
-            <circle cx="280" cy="360" r="5" fill="#c9a84c"/>
-          </svg>
-        </div>
-        <img src="../images/placeholders/f3.jpg" alt="" class="frame-photo" onerror="this.classList.add('frame-placeholder')"/>
-      </div>
-      <p class="frame-caption">Adventure</p>
-    </div>
-    <div class="hanging-frame reveal-scale delay-4">
-      <div class="frame-rope"></div>
-      <div class="frame-clip">✦</div>
-      <div class="ornate-frame">
-        <div class="frame-border-svg">
-          <svg viewBox="0 0 300 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="2" width="296" height="376" rx="3" stroke="#c9a84c" stroke-width="3"/>
-            <rect x="12" y="12" width="276" height="356" rx="2" stroke="#c9a84c" stroke-width="1" stroke-dasharray="6,4"/>
-            <circle cx="20" cy="20" r="5" fill="#c9a84c"/>
-            <circle cx="280" cy="20" r="5" fill="#c9a84c"/>
-            <circle cx="20" cy="360" r="5" fill="#c9a84c"/>
-            <circle cx="280" cy="360" r="5" fill="#c9a84c"/>
-          </svg>
-        </div>
-        <img src="../images/placeholders/f4.jpg" alt="" class="frame-photo" onerror="this.classList.add('frame-placeholder')"/>
-      </div>
-      <p class="frame-caption">Engagement Day</p>
-    </div>
+    <p class="frame-caption">First Look</p>
   </div>
+
+  <!-- FRAME 2 -->
+  <div class="hanging-frame reveal-scale delay-2 large">
+    <div class="frame-rope"></div>
+    <div class="frame-clip">✦</div>
+    <div class="ornate-frame">
+      <div class="frame-border-svg">
+        <svg viewBox="0 0 300 380" fill="none">
+          <rect x="2" y="2" width="296" height="376" rx="3" stroke="#c9a84c" stroke-width="4"/>
+          <rect x="10" y="10" width="280" height="360" rx="2" stroke="#f0d89a" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <img src="../images/gold frame 2.jpeg" class="frame-photo"/>
+    </div>
+    <p class="frame-caption">Heart & Soul</p>
+  </div>
+
+</div>
 </section>
 
 <!-- ── MEMORY REEL ── -->
@@ -180,19 +139,19 @@
   </div>
   <div class="reel-track-wrap">
     <div class="reel-track" id="reelTrack">
-      <div class="reel-photo"><img src="../images/placeholders/r1.jpg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
-      <div class="reel-photo"><img src="../images/placeholders/r2.jpg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
-      <div class="reel-photo"><img src="../images/placeholders/r3.jpg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
-      <div class="reel-photo"><img src="../images/placeholders/r4.jpg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
-      <div class="reel-photo"><img src="../images/placeholders/r5.jpg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
-      <div class="reel-photo"><img src="../images/placeholders/r6.jpg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
+      <div class="reel-photo"><img src="../images/polaroid-1.jpeg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
+      <div class="reel-photo"><img src="../images/polaroid-2.jpeg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
+      <div class="reel-photo"><img src="../images/polaroid-3.jpeg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
+      <div class="reel-photo"><img src="../images/polaroid-4.jpeg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
+      <!-- <div class="reel-photo"><img src="../images/placeholders/r5.jpg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div> -->
+      <!-- <div class="reel-photo"><img src="../images/placeholders/r6.jpg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div> -->
       <!-- Duplicate for infinite scroll -->
-      <div class="reel-photo"><img src="../images/placeholders/r1.jpg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
-      <div class="reel-photo"><img src="../images/placeholders/r2.jpg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
-      <div class="reel-photo"><img src="../images/placeholders/r3.jpg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
-      <div class="reel-photo"><img src="../images/placeholders/r4.jpg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
-      <div class="reel-photo"><img src="../images/placeholders/r5.jpg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
-      <div class="reel-photo"><img src="../images/placeholders/r6.jpg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
+      <div class="reel-photo"><img src="../images/polaroid-1.jpeg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
+      <div class="reel-photo"><img src="../images/polaroid-2.jpeg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
+      <div class="reel-photo"><img src="../images/polaroid-3.jpeg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
+      <div class="reel-photo"><img src="../images/polaroid-4.jpeg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
+      <!-- <div class="reel-photo"><img src="../images/placeholders/r5.jpg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div>
+      <div class="reel-photo"><img src="../images/placeholders/r6.jpg" alt="" onerror="this.parentElement.classList.add('reel-placeholder')"/></div> -->
     </div>
   </div>
 </section>

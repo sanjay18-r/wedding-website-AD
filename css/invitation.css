@@ -247,7 +247,8 @@
 
 /* Name */
 .card-person-name {
-  font-family: var(--font-display);
+  font-family: var(--font-serif);
+  font-weight: 600;
   font-size: clamp(20px, 3.5vw, 30px);
   letter-spacing: 1px;
   line-height: 1.2;

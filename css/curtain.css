@@ -166,13 +166,25 @@
 }
 
 .stage-title {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Cormorant Garamond', serif; /* FIXED FONT */
   font-size: clamp(36px, 6vw, 72px);
-  font-weight: 400;
-  color: white;
-  letter-spacing: 6px;
-  text-shadow: 0 0 40px rgba(240,216,154,0.4), 0 2px 20px rgba(0,0,0,0.8);
+  font-weight: 500;
+
+  letter-spacing: 2px;        /* cleaner spacing */
   line-height: 1.1;
+
+  color: white;
+  text-transform: none;
+
+  text-shadow:
+    0 0 40px rgba(240,216,154,0.4),
+    0 2px 20px rgba(0,0,0,0.8);
+
+  /* ALIGNMENT FIX */
+  font-kerning: normal;
+  font-feature-settings: "kern";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 .amp {

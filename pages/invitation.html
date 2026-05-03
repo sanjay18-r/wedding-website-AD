@@ -12,8 +12,8 @@
 </head>
 <body>
 
-<audio id="bgMusic" src="../audio/wedding-music.mp3" loop preload="none"></audio>
-<button id="musicBtn" onclick="toggleMusic()" title="Toggle Music" aria-label="Toggle music">🎵</button>
+<audio id="bgMusic" src="../audio/wedding-music.mp3" loop preload="auto"></audio>
+<button id="musicBtn" title="Toggle Music" aria-label="Toggle music">🎵</button>
 
 <canvas id="petals"></canvas>
 <canvas id="sparkles"></canvas>
@@ -53,7 +53,7 @@
     <div class="envelope" id="envelope" onclick="openEnvelope()">
       <div class="env-flap"></div>
       <div class="env-body">
-        <div class="env-seal">A❧P</div>
+        <div class="env-seal">A❧D</div>
         <p class="env-hint">Click to open ✦</p>
       </div>
     </div>
@@ -84,86 +84,40 @@
       </svg>
     </div>
 
-    <!-- Card Content -->
-    <div class="card-content">
-      <!-- Header floral -->
-      <div class="card-top-flower">🌸 ✦ 🌸</div>
-      
-      <p class="card-blessing">Sri Periyandavar Thunai · Sri Koliyanur Amman Thunai</p>
+    <div class="card-content simple-invite">
 
-      <p class="card-from">We eagerly expect the esteemed presence of<br/>you and your family on this important day</p>
+  <h2 class="invite-title">Wedding Ceremony</h2>
 
-      <div class="card-families">
-        <div class="card-family">
-          <p class="family-label">Son of</p>
-          <p class="family-name">Mr. A. Rajendran<br/><span class="family-detail">Ex. Army Engrs, Kattupakkam, Chennai</span><br/>&amp; Mrs. R. Lakshmi</p>
-        </div>
-        <div class="card-and">♥</div>
-        <div class="card-family">
-          <p class="family-label">Daughter of</p>
-          <p class="family-name">Mr. R. Sankar<br/><span class="family-detail">N.R.S. Timbers, Vanuvampet, Chennai</span><br/>&amp; Mrs. S. Lakshmi</p>
-        </div>
-      </div>
+  <p class="invite-text">
+    We cordially invite you to join the<br>
+    celebration of love & joy of
+  </p>
 
-      <p class="card-invite-text">
-        cordially solicit your esteemed presence with family and friends<br/>
-        on the auspicious occasion of the wedding of their children
-      </p>
+  <h1 class="invite-name">Arun Mahendran</h1>
 
-      <div class="card-couple-names">
+  <div class="invite-and">&</div>
 
-        <div class="card-person-block">
-          <span class="card-person-name groom-name">R. ArunMahendran</span>
-          <span class="card-person-qual">B.E., M.S. (Sweden)</span>
-          <span class="card-person-role">Supply Chain Coordinator<br/>Titanx Engine Cooling AB, Sweden</span>
-        </div>
+  <h1 class="invite-name bride">Divya</h1>
 
-        <div class="card-couple-heart">❦</div>
+  <div class="invite-details">
+    <div class="invite-left">
+      <p><strong>Reception - 28 May 2026</strong></p>
+      <p>7.00 PM onwards</p>
+    </div>
 
-        <div class="card-person-block">
-          <span class="card-person-name bride-name">S. Divya</span>
-          <span class="card-person-qual">B.Arch.,</span>
-          <span class="card-person-role">Senior Architect &amp; Designer<br/>Design Cafe Interior</span>
-        </div>
-
-      </div>
-
-      <div class="card-divider-ornament">— ✦ —</div>
-
-      <div class="card-details">
-        <div class="card-detail-row">
-          <span class="cd-icon">📅</span>
-          <div>
-            <div class="cd-label">Wedding (Muhurtham)</div>
-            <div class="cd-value">Friday, 29th May 2026 · 6:00 AM – 7:30 AM</div>
-          </div>
-        </div>
-        <div class="card-detail-row">
-          <span class="cd-icon">🎊</span>
-          <div>
-            <div class="cd-label">Reception</div>
-            <div class="cd-value">Thursday, 28th May 2026 · 7:00 PM onwards<br/><small style="color:var(--gold);font-size:12px;">🎵 DJ Music</small></div>
-          </div>
-        </div>
-        <div class="card-detail-row">
-          <span class="cd-icon">📍</span>
-          <div>
-            <div class="cd-label">Venue</div>
-            <div class="cd-value">Kalyani Thirumana Mandapam<br/>Mangadu, Chennai</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-rsvp">
-        <p>Kindly respond by 15th May 2026</p>
-        <a href="wishes.html" class="btn-primary" style="margin-top:16px;">RSVP &amp; Send Wishes</a>
-      </div>
-
-      <div class="card-bottom-flower">🌺 ✦ 🌺</div>
-      
-      <p class="card-footer-note">Your presence is our greatest gift</p>
+    <div class="invite-right">
+      <p><strong>Muhurtham - 29 May 2026</strong></p>
+      <p>between 06.00AM to 7.30AM</p>
     </div>
   </div>
+
+  <div class="invite-venue">
+    <p>Kalyani Thirumana</p>
+    <p>Mandapam, Mangadu</p>
+    <p>Chennai</p>
+  </div>
+
+</div>
 
   <!-- Share / Download actions -->
   <div class="card-actions" id="cardActions" style="display:none;">

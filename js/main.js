@@ -117,22 +117,45 @@ document.querySelectorAll('img').forEach(img => {
 });
 
 // ── MUSIC TOGGLE ─────────────────────────
-function toggleMusic() {
-  const music = document.getElementById('bgMusic');
-  const btn   = document.getElementById('musicBtn');
-  if (!music || !btn) return;
+// ── GLOBAL MUSIC CONTROL (ALL PAGES) ─────────────────
+const music = document.getElementById('bgMusic');
+const musicBtn = document.getElementById('musicBtn');
 
-  if (music.paused) {
-    music.volume = 0.35;
-    music.play().then(() => {
-      btn.textContent = '🎶';
-      btn.classList.add('playing');
-    }).catch(() => {
-      btn.textContent = '🔇';
-    });
-  } else {
-    music.pause();
-    btn.textContent = '🎵';
-    btn.classList.remove('playing');
+let isPlaying = localStorage.getItem("musicPlaying") === "true";
+
+// Restore state on load
+if (music && musicBtn) {
+  music.volume = 0.35;
+
+  if (isPlaying) {
+    // Browser autoplay workaround
+    document.addEventListener("click", () => {
+      music.play().catch(() => {});
+    }, { once: true });
+
+    musicBtn.textContent = "🎶";
+    musicBtn.classList.add("playing");
   }
 }
+
+// Toggle music
+musicBtn?.addEventListener("click", () => {
+  if (!music) return;
+
+  if (isPlaying) {
+    music.pause();
+    musicBtn.textContent = "🎵";
+    musicBtn.classList.remove("playing");
+    localStorage.setItem("musicPlaying", "false");
+  } else {
+    music.play().then(() => {
+      musicBtn.textContent = "🎶";
+      musicBtn.classList.add("playing");
+      localStorage.setItem("musicPlaying", "true");
+    }).catch(() => {
+      musicBtn.textContent = "🔇";
+    });
+  }
+
+  isPlaying = !isPlaying;
+});

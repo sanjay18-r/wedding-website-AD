@@ -12,9 +12,8 @@
 </head>
 <body>
 
-<audio id="bgMusic" src="../audio/wedding-music.mp3" loop preload="none"></audio>
+<audio id="bgMusic" src="../audio/wedding-music.mp3" loop preload="auto"></audio>
 <button id="musicBtn" onclick="toggleMusic()" title="Toggle Music" aria-label="Toggle music">🎵</button>
-
 <canvas id="petals"></canvas>
 <canvas id="sparkles"></canvas>
 
@@ -51,8 +50,8 @@
   <div class="wish-form-wrap reveal-up">
     <div class="wf-card">
       <div class="wf-header">
-        <div class="wf-icon">💌</div>
-        <p>Your message will be displayed in the Wishes Wall below and will mean the world to Arun Mahendran & Divya.</p>
+        <div class="wf-icon">💚</div>
+        <p>Fill in your wish below and it will be sent <strong>directly to Arun Mahendran on WhatsApp</strong> and also shown on the Wishes Wall. 🎉</p>
       </div>
       <div class="wf-body">
         <div class="wf-field">
@@ -68,6 +67,7 @@
             <option>Colleague</option>
             <option>Childhood Friend</option>
             <option>Neighbor</option>
+            <option>Cousin</option>
             <option>Other</option>
           </select>
         </div>
@@ -96,9 +96,18 @@
             <label class="rsvp-opt"><input type="radio" name="rsvp" value="no"/><span>Sadly, cannot make it</span></label>
           </div>
         </div>
+
+        <!-- WhatsApp send button -->
         <button class="btn-primary wf-submit" onclick="submitWish()">
-          <span>Send My Wish ✦</span>
+          <span>💬 Send Wish on WhatsApp ✦</span>
         </button>
+
+        <!-- WhatsApp branding note -->
+        <p class="wa-note">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width:16px;height:16px;vertical-align:middle;margin-right:4px;"/>
+          Clicking the button will open WhatsApp with your message ready to send
+        </p>
+
       </div>
     </div>
   </div>
@@ -109,16 +118,15 @@
   <div class="section-header">
     <p class="section-eyebrow">Love All Around</p>
     <h2>The Wishes Wall</h2>
-    <p style="margin-top:12px;font-size:15px;">Messages from people who love Arun Mahendran & Divya</p>
+    <p style="margin-top:12px;font-size:15px;">Messages from people who love Arun Mahendran &amp; Divya</p>
   </div>
 
   <div class="wishes-grid" id="wishesGrid">
-    <!-- Pre-filled wishes -->
     <div class="wish-card wc-rose reveal-up delay-1">
       <div class="wc-emoji">💐</div>
       <p class="wc-message">"Wishing you both a lifetime of laughter, adventures, and unconditional love. So proud to call you family!"</p>
       <div class="wc-footer">
-        <span class="wc-name">— Amma & Appa</span>
+        <span class="wc-name">— Amma &amp; Appa</span>
         <span class="wc-relation">Family</span>
       </div>
     </div>
@@ -126,23 +134,25 @@
       <div class="wc-emoji">🌺</div>
       <p class="wc-message">"Arun Mahendran, you found your forever person! Divya, welcome to the most wonderful family. May your home always be full of love."</p>
       <div class="wc-footer">
-        <span class="wc-name">— Vikram & Divya</span>
-        <span class="wc-relation">Close Friends</span>
+        <span class="wc-name">—Priyanka</span>
+        <span class="wc-relation">Family</span>
       </div>
     </div>
     <div class="wish-card wc-blush reveal-up delay-3">
       <div class="wc-emoji">🥂</div>
-      <p class="wc-message">"To the most beautiful couple I know. You two were always meant to be. Here's to a lifetime of happiness!"</p>
+      <p class="wc-message">"Watching you find your forever is such a beautiful moment for me.
+May your journey together be filled with love, laughter, and endless memories.
+With love, always"</p>
       <div class="wc-footer">
-        <span class="wc-name">— Kavitha</span>
-        <span class="wc-relation">Childhood Friend</span>
+        <span class="wc-name">— Cousins</span>
+        <span class="wc-relation">Family</span>
       </div>
     </div>
     <div class="wish-card wc-rose reveal-up delay-4">
       <div class="wc-emoji">✨</div>
       <p class="wc-message">"May every day of your married life be as magical as today. You deserve every bit of happiness in the world!"</p>
       <div class="wc-footer">
-        <span class="wc-name">— The Sharma Family</span>
+        <span class="wc-name">— Indhu</span>
         <span class="wc-relation">Family</span>
       </div>
     </div>
@@ -150,15 +160,15 @@
       <div class="wc-emoji">💍</div>
       <p class="wc-message">"Divya, you picked the best one! Arun Mahendran, you are the luckiest man alive. Congratulations to you both!"</p>
       <div class="wc-footer">
-        <span class="wc-name">— Colleagues &amp; Friends</span>
-        <span class="wc-relation">Colleagues</span>
+        <span class="wc-name">— Mayuri</span>
+        <span class="wc-relation">Family</span>
       </div>
     </div>
     <div class="wish-card wc-blush reveal-up delay-6">
       <div class="wc-emoji">🌸</div>
       <p class="wc-message">"Today two families become one. May your love be modern enough to survive the times, and old-fashioned enough to last forever."</p>
       <div class="wc-footer">
-        <span class="wc-name">— Uncle Krishnan</span>
+        <span class="wc-name">— Banu</span>
         <span class="wc-relation">Family</span>
       </div>
     </div>
@@ -168,13 +178,14 @@
 <!-- FLOATING HEARTS OVERLAY -->
 <div id="heartsOverlay" class="hearts-overlay" style="display:none;"></div>
 
-<!-- Success message -->
+<!-- Success modal -->
 <div class="wish-success" id="wishSuccess" style="display:none;">
   <div class="ws-inner">
-    <div class="ws-icon">💌</div>
-    <h3>Wish Sent!</h3>
-    <p>Arun Mahendran & Divya will cherish your words forever. Thank you!</p>
-    <button class="btn-primary" onclick="closeSuccess()">Back to Wishes</button>
+    <div class="ws-icon">💚</div>
+    <h3>WhatsApp is Opening!</h3>
+    <p>Your wish is ready to send to <strong>Arun Mahendran</strong> on WhatsApp. Just hit Send! 🎉</p>
+    <p class="ws-sub">If WhatsApp didn't open automatically,<br/>please allow popups and try again.</p>
+    <button class="btn-primary" onclick="closeSuccess()">Back to Wishes Wall</button>
   </div>
 </div>
 
@@ -196,8 +207,14 @@
 <script src="../js/particles.js"></script>
 <script src="../js/main.js"></script>
 <script>
-// Char counter
-const msgArea = document.getElementById('wfMessage');
+
+// ── GROOM'S WHATSAPP NUMBER ──────────────────────────────────
+// Format: country code + number (no spaces, no + sign, no leading 0)
+// India (+91) example: 919876543210
+const GROOM_WHATSAPP = '918056195569'; // 
+
+// ── CHAR COUNTER ─────────────────────────────────────────────
+const msgArea  = document.getElementById('wfMessage');
 const charCount = document.getElementById('charCount');
 if (msgArea) {
   msgArea.addEventListener('input', () => {
@@ -205,7 +222,7 @@ if (msgArea) {
   });
 }
 
-// Sticker selector
+// ── STICKER SELECTOR ─────────────────────────────────────────
 let selectedEmoji = '💐';
 document.querySelectorAll('.sticker-opt').forEach(opt => {
   opt.addEventListener('click', function() {
@@ -215,47 +232,73 @@ document.querySelectorAll('.sticker-opt').forEach(opt => {
   });
 });
 
+// ── SUBMIT WISH → WHATSAPP ───────────────────────────────────
 function submitWish() {
-  const name    = document.getElementById('wfName').value.trim();
-  const message = document.getElementById('wfMessage').value.trim();
-  const relation = document.getElementById('wfRelation').value;
+  const name     = document.getElementById('wfName').value.trim();
+  const message  = document.getElementById('wfMessage').value.trim();
+  const relation = document.getElementById('wfRelation').value || 'Guest';
+  const rsvp     = document.querySelector('input[name="rsvp"]:checked').value;
+  const rsvpText = rsvp === 'yes' ? '✅ Yes, attending with joy!' : '❌ Unable to attend';
 
   if (!name || !message) {
     alert('Please fill in your name and message. 🌸');
     return;
   }
 
-  // Add card to wall
-  const grid = document.getElementById('wishesGrid');
-  const colors = ['wc-rose', 'wc-gold', 'wc-blush'];
-  const color = colors[Math.floor(Math.random() * colors.length)];
+  // ── 1. Build WhatsApp message ────────────────────────────
+  const waMessage =
+`${selectedEmoji} *Wedding Wish — Arun & Divya* ${selectedEmoji}
 
-  const card = document.createElement('div');
+💌 *From:* ${name} (${relation})
+
+📝 *Message:*
+"${message}"
+
+🎉 *RSVP:* ${rsvpText}
+
+_Sent from the wedding website_ 🌸`;
+
+  const waURL = `https://wa.me/${GROOM_WHATSAPP}?text=${encodeURIComponent(waMessage)}`;
+
+  // ── 2. Add card to Wishes Wall ───────────────────────────
+  const grid   = document.getElementById('wishesGrid');
+  const colors = ['wc-rose', 'wc-gold', 'wc-blush'];
+  const color  = colors[Math.floor(Math.random() * colors.length)];
+  const card   = document.createElement('div');
   card.className = `wish-card ${color} new-wish`;
   card.innerHTML = `
     <div class="wc-emoji">${selectedEmoji}</div>
     <p class="wc-message">"${message}"</p>
     <div class="wc-footer">
       <span class="wc-name">— ${name}</span>
-      <span class="wc-relation">${relation || 'Guest'}</span>
+      <span class="wc-relation">${relation}</span>
     </div>
   `;
   grid.prepend(card);
   setTimeout(() => card.classList.add('revealed'), 50);
 
-  // Launch hearts
+  // ── 3. Hearts animation ──────────────────────────────────
   launchHearts();
 
-  // Show success
+  // ── 4. Show success modal ────────────────────────────────
   document.getElementById('wishSuccess').style.display = 'flex';
 
-  // Reset form
-  document.getElementById('wfName').value = '';
-  document.getElementById('wfMessage').value = '';
+  // ── 5. Open WhatsApp after short delay ──────────────────
+  setTimeout(() => {
+    window.open(waURL, '_blank');
+  }, 700);
+
+  // ── 6. Reset form ────────────────────────────────────────
+  document.getElementById('wfName').value     = '';
+  document.getElementById('wfMessage').value  = '';
   document.getElementById('wfRelation').value = '';
-  charCount.textContent = '0';
+  document.getElementById('charCount').textContent = '0';
+  selectedEmoji = '💐';
+  document.querySelectorAll('.sticker-opt').forEach(s => s.classList.remove('active'));
+  document.querySelector('.sticker-opt[data-emoji="💐"]').classList.add('active');
 }
 
+// ── HEARTS ANIMATION ─────────────────────────────────────────
 function launchHearts() {
   const overlay = document.getElementById('heartsOverlay');
   overlay.style.display = 'block';
@@ -274,10 +317,12 @@ function launchHearts() {
   setTimeout(() => overlay.style.display = 'none', 3500);
 }
 
+// ── CLOSE SUCCESS ─────────────────────────────────────────────
 function closeSuccess() {
   document.getElementById('wishSuccess').style.display = 'none';
   document.getElementById('wishesGrid').scrollIntoView({ behavior: 'smooth' });
 }
+
 </script>
 </body>
 </html>

@@ -328,3 +328,21 @@
   .wf-body { grid-template-columns: 1fr; padding: 30px; }
   .wf-header { flex-direction: column; text-align: center; padding: 30px; }
 }
+
+/* ── WHATSAPP NOTE BELOW BUTTON ── */
+.wa-note {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 10px;
+  letter-spacing: 0.3px;
+  line-height: 1.6;
+}
+
+/* ── SUCCESS MODAL SUB TEXT ── */
+.ws-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+  line-height: 1.7;
+}
