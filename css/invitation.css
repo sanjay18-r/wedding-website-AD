@@ -131,7 +131,7 @@
 .card-content {
   position: relative;
   z-index: 3;
-  padding: 60px 56px;
+  padding: 12px 60px 56px;
   text-align: center;
 }
 
@@ -157,8 +157,12 @@
   font-size: 17px;
   font-style: italic;
   color: var(--muted);
-  line-height: 1.8;
-  margin-bottom: 28px;
+
+  text-align: center;        /* centers text */
+  max-width: 520px;          /* prevents stretching */
+  margin: 0 auto 32px;       /* centers block properly */
+
+  line-height: 1.9;          /* improves spacing */
 }
 
 /* ── PARENT FAMILIES ── */

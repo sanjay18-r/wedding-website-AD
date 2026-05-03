@@ -308,10 +308,32 @@
 .reel-photo.reel-placeholder::after { content: '🌸'; }
 
 /* Responsive */
-@media (max-width: 900px) {
-  .polaroid-wall { gap: 20px; }
-  .polaroid-card { width: 170px; }
-  .hanging-frames { gap: 30px; }
-  .ornate-frame { width: 160px; }
-  .hanging-frame.large .ornate-frame { width: 200px; }
+@media (max-width: 600px) {
+
+  .polaroid-card {
+    width: 85%;
+    max-width: 260px;
+    margin: 0 auto;
+    padding: 12px 12px 60px;
+  }
+
+  .polar-caption {
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 0 10px;
+    bottom: 10px;
+  }
+
+  .polaroid-wall {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Remove rotation for clean mobile layout */
+  .rotate-neg4,
+  .rotate-pos5,
+  .rotate-neg2,
+  .rotate-pos3 {
+    transform: none !important;
+  }
 }
